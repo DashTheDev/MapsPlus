@@ -1,0 +1,10 @@
+name: MapPlugin
+version: '${project.version}'
+main: me.dash.mapplugin.MapPlugin
+api-version: 1.19
+authors: [ Dashersack ]
+description: A plugin for maps.
+permissions:
+  mp.waypoints.add:
+    description: Allows a player to add a global waypoint.
+    default: true
