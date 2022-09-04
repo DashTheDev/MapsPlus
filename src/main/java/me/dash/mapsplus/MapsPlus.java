@@ -33,7 +33,7 @@ public final class MapsPlus extends JavaPlugin {
     @Override
     public void onEnable() {
         playerMapCursorManager = new PlayerMapCursorManager();
-        waypointMapCursorManager = new WaypointMapCursorManager();
+        waypointMapCursorManager = new WaypointMapCursorManager(this);
         playerMapRenderer = new PlayerMapRenderer(this);
         waypointMapRenderer = new WaypointMapRenderer(this);
 
@@ -41,12 +41,12 @@ public final class MapsPlus extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
         getServer().getPluginManager().registerEvents(new CartographyInventoryListener(this), this);
         getServer().getPluginManager().registerEvents(new CartographyResultListener(this), this);
-        getServer().getPluginManager().registerEvents(new BannerInteractListener(this), this);
+        getServer().getPluginManager().registerEvents(new BannerListener(this), this);
         getServer().getPluginManager().registerEvents(new MapWaypointListener(this), this);
     }
 
     @Override
     public void onDisable() {
-
+        waypointMapCursorManager.saveAllWaypointDataToYml();
     }
 }

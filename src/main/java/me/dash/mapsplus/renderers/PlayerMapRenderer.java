@@ -34,7 +34,7 @@ public class PlayerMapRenderer extends MapRenderer implements CustomMapRenderer 
             mapCursor.setY((byte)mapPosition.mapPosY());
             mapCursor.setVisible(mapPosition.isInBounds());
 
-            if (player.getUniqueId().equals(entry.getKey())) {
+            if (player.getUniqueId().equals(entry.getKey()) && PlayerHandUtility.checkHandsForMap(player, map.getId())) {
                 mapCursor = new MapCursor(mapCursor.getX(), mapCursor.getY(), mapCursor.getDirection(), MapCursor.Type.WHITE_POINTER, mapCursor.isVisible());
 
                 if (!mapPosition.isInBounds() && PlayerHandUtility.checkHandsForMap(player, map.getId())) {

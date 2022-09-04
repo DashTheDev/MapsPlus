@@ -1,4 +1,4 @@
-package me.dash.mapsplus.data;
+package me.dash.mapsplus.data.persistent;
 
 import org.bukkit.persistence.PersistentDataAdapterContext;
 import org.bukkit.persistence.PersistentDataType;

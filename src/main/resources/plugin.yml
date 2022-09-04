@@ -1,10 +1,13 @@
-name: MapPlugin
+name: MapsPlus
 version: '${project.version}'
-main: me.dash.mapplugin.MapPlugin
+main: me.dash.mapsplus.MapsPlus
 api-version: 1.19
 authors: [ Dashersack ]
-description: A plugin for maps.
+description: A plugin that extends the vanilla map.
 permissions:
   mp.waypoints.add:
     description: Allows a player to add a global waypoint.
+    default: true
+  mp.waypoints.remove:
+    description: Allows a player to remove a global waypoint.
     default: true

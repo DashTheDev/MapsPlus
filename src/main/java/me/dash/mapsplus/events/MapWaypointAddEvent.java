@@ -8,9 +8,9 @@ import org.bukkit.event.HandlerList;
 public class MapWaypointAddEvent extends Event {
 
     private static final HandlerList handlers = new HandlerList();
-    private Player player;
-    private Banner banner;
-    private String bannerName;
+    private final Player player;
+    private final Banner banner;
+    private final String bannerName;
 
     public MapWaypointAddEvent(Player player, Banner banner, String bannerName) {
         this.player = player;
@@ -31,7 +31,7 @@ public class MapWaypointAddEvent extends Event {
     }
 
     public boolean hasBannerName() {
-        return bannerName != null;
+        return bannerName != null && !bannerName.isEmpty();
     }
 
     public HandlerList getHandlers() {

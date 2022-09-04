@@ -1,10 +1,10 @@
 package me.dash.mapsplus.records;
 
-import org.bukkit.DyeColor;
 import org.bukkit.Location;
+import org.bukkit.map.MapCursor;
 
 import java.util.UUID;
 
-public record MapWaypoint(UUID waypointUid, Location location, String waypointName, DyeColor waypointColour) {
+public record MapWaypoint(UUID waypointUid, Location location, String waypointName, MapCursor.Type waypointMapCursorType) {
 
 }

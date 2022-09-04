@@ -18,9 +18,9 @@ public interface CustomMapRenderer {
         };
     }
 
-    default MapPosition findRelPosition(int mapX, int mapZ, int playerX, int playerZ, int scale) {
-        int adjustedX = (int)(MAP_DIAMETER * ((playerX - mapX) / ((double) scale * MAP_RADIUS)));
-        int adjustedZ = (int)(MAP_DIAMETER * ((playerZ - mapZ) / ((double) scale * MAP_RADIUS)));
+    default MapPosition findRelPosition(int mapX, int mapZ, int locX, int locZ, int scale) {
+        int adjustedX = (int)(MAP_DIAMETER * ((locX - mapX) / ((double) scale * MAP_RADIUS)));
+        int adjustedZ = (int)(MAP_DIAMETER * ((locZ - mapZ) / ((double) scale * MAP_RADIUS)));
         boolean isInBounds = true;
 
         if (adjustedX > MAP_DIAMETER) {

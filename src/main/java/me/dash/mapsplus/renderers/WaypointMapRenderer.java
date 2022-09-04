@@ -21,7 +21,11 @@ public class WaypointMapRenderer extends MapRenderer implements CustomMapRendere
         MapCursorCollection mapCursorCollection = new MapCursorCollection();
 
         for (WaypointMapCursorData waypointMapCursorData : waypointMapCursorManager.getWaypointMapCursorValues()) {
-            MapPosition mapPosition = findRelPosition(map.getCenterX(), map.getCenterZ(), waypointMapCursorData.getPosX(), waypointMapCursorData.getPosZ(), mapScale);
+            MapPosition mapPosition = findRelPosition(map.getCenterX(),
+                    map.getCenterZ(),
+                    waypointMapCursorData.getLocation().getBlockX(),
+                    waypointMapCursorData.getLocation().getBlockZ(),
+                    mapScale);
 
             MapCursor mapCursor = waypointMapCursorData.getMapCursor();
             mapCursor.setX((byte)mapPosition.mapPosX());
